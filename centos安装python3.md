@@ -3,7 +3,7 @@
 * wget https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz
 * 解压 tar -zxvf Python-3.7.1.tgz
 
-#### 安装依赖
+#### 安装步骤
 * 安装python3.7 需要下载此依赖,否则 异常提示:ModuleNotFoundError: No module named ‘_ctypes’
     > yum install libffi-devel -y 
 * 安装依赖
