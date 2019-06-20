@@ -1,22 +1,22 @@
 ## 获取App 的packageName 和 Activity的方法
 
-** “ 使用appium 编写自动化脚本需要配置App 的package和Activity, 下面介绍几种常用获取packageName和Activity的方法。 ” **
+**“ 使用appium 编写自动化脚本需要配置App 的package和Activity, 下面介绍几种常用获取packageName和Activity的方法。 ”**
 
 ### 一、使用Android-SDK 中的aapt工具**(需要配置安卓开发环境)**
 ~~~
 在cmd 中运行aapt dump badging *.apk
 ~~~
 
-** 在cmd中找到[package: name="..."] com.tencten.tim 是app的包名**
+**在cmd中找到[package: name="..."] com.tencten.tim 是app的包名**
 
 ![app的package](./img/packageName.jpg)</br>
 
-** 在cmd找到[lunchable-activity name='...'] com.tencent.mobileqq.activity.SplashActivity是app的Activity.**</br>
+**在cmd找到[lunchable-activity name='...'] com.tencent.mobileqq.activity.SplashActivity是app的Activity.**</br>
 
 ![app的Activity](./img/activity.jpg)</br>
 
 ### 二、有的app通过aapt工具找不到Activity(抖音), 可以使用logcat获取
-** 使用adb连接手机**
+**使用adb连接手机**
 
 ~~~ 
 1. 在cmd输入 adb devices 命令查看是否已连接手机。我使用的是模拟器，通过 adb connect ip:port 命令连接，连接成功后显示如图内容;
@@ -25,7 +25,7 @@
 
 ![](./img/devices.jpg)
 
-** 在日志文件中获取Activity**
+**在日志文件中获取Activity**
 ~~~
 1. 成功连接手机后，在cmd中输入 adb logcat > g:/log.log 命令，
 2. 在手机随便点几下你要获取的Activity 的App。 
@@ -44,15 +44,13 @@
 2. 运行 logcat | grep cmp=
 ~~~
 
-** "cmp=" 后的内容就是packageName和Activity **
+**"cmp=" 后的内容就是packageName和Activity**
 
 ![](./img/adbshell.jpg)
 
-**
-前面三种方法都需要安装Android-SDK, 使用的工具(adb, aapt)都添加在环境变量中. <br>
+**前面三种方法都需要安装Android-SDK, 使用的工具(adb, aapt)都添加在环境变量中. <br>
 adb.exe /sdk/platform-tools/<br>
-aapt.exe /sdk/build-tools/28.0.3/
-**
+aapt.exe /sdk/build-tools/28.0.3/**
 
 ### 四、使用apktool 反编译App
 #### [下载apktool](https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.4.0.jar)
