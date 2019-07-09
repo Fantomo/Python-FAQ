@@ -1,6 +1,6 @@
 ## 获取App 的packageName 和 Activity的方法
 
-**“ 使用appium 编写自动化脚本需要配置App 的package和Activity, 下面介绍几种常用获取packageName和Activity的方法。 ”**
+**“ 使用appium 编写自动化脚本需要配置App 的packageName和Activity, 下面介绍几种常用获取packageName和Activity的方法。 ”**
 
 ### 一、使用Android-SDK 中的aapt工具**(需要配置安卓开发环境)**
 ~~~
